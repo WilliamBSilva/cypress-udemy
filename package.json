@@ -1,0 +1,32 @@
+{
+  "name": "cypress-udemy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cy:open": "cypress open",
+    "clean:reports": "if exist cypress\\cucumber-report\\features\\ rmdir /S/Q cypress\\cucumber-report\\features\\",
+    "pretest": "npm run clean:reports",
+    "cy:run:parallel": "cypress run --record --tag=@SerieA --parallel",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox",
+    "cy:run:edge": "cypress run --browser edge",
+    "scripts": "cypress run --browser chrome --headless",
+    "posttest": "node ./cypress/report.js",
+    "test": "npm run scripts || npm run posttest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WilliamBSilva/cypress-udemy.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WilliamBSilva/cypress-udemy/issues"
+  },
+  "homepage": "https://github.com/WilliamBSilva/cypress-udemy#readme",
+  "devDependencies": {
+    "cypress": "^9.1.1"
+  }
+}
